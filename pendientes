@@ -1,0 +1,82 @@
+- NO es idempotente -> cuando se hacen 2 cargas el mismo día, se duplica la información: Raw. Buscar buenas prácticas de idempotencia.
+ 
+campo1, campo2, _file_fingerprint, _fecha_ingesta
+claudio, ampuero, jdjdjd ,07/09/2026
+luis, mendez, jdjdjd ,07/09/2026
+ 
+glue pyshell
+ 
+* -> flasndfla
+ 
+pipeline_registry
+ 
+execution_history -> registro por cada ejecución de step function
+checkpoint_
+ 
+ 
+step function generico
+ 
+ 
+ 
+claudio, ampuero, 07/09/2026
+luis, mendez, 07/09/2026
+ 
+ 
+- tabla pit -> los snapshots deben ser TIMESTAMP (date)
+ 
+07/09/2026 (TIMESTAMP) | ruc -> hk_sat1, load_date_sat1
+07/09/2026 (TIMESTAMP) | ruc -> hk_sat1, load_date_sat1
+ 
+ 
+Mejorar las definiciones de las tablas
+ 
+particion por bucketning -> hubs
+ 
+tipos de documento
+ 
+SUNAT
+SUNAT10
+ 
+SUNAT20
+10747104862 -> 1|74710486
+15516516552 -> CE|A11641656
+ 
+SUNAT30
+ 
+SUNAT40
+ 
+RENIEC COTEJO MASIVO
+74710486
+ 
+hub_ruc
+10747104862
+15516516552
+ 
+fuente | tipo_documento_fuente| tipo_documento_negocio
+sunat  | 1                    | D
+ 
+soft_rule
+ 
+hub_identidad
+D|74710486
+
+
+
+------------------
+
+Definición de tablas write sort order y partition
+
+
+
+Idempotencia 
+fecha ingesta, time stamp
+Ten cuidado de subir archivos con cambios basura
+
+
+
+Auditoría trazabilidad
+
+Stagin to raw vault
+HUD identidad
+Hash
+
